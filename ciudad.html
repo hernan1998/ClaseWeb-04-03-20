@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
+
+    <!-- Bootstrap CSS -->
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+      integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="assets/css/style.css" />
+
+    <!-- Libreria SWAL-->
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@9"></script>
+    <title>Hello, world!</title>
+    <style>
+      * {
+        padding: 0;
+        margin: 0;
+      }
+      #plantilla {
+        position: absolute;
+        right: 0;
+        overflow: hidden;
+        height: 900px;
+        width: 1200px;
+      }
+      #ciudad1 {
+        position: absolute;
+        top: 0;
+        right: 0;
+      }
+      #ciudad2 {
+        position: absolute;
+        top: 0;
+        right: 1200px;
+      }
+      #carro {
+        position: absolute;
+        right: 0;
+        top: 470px;
+      }
+      #carro img {
+        width: 500px;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="plantilla">
+      <div id="ciudad1">
+        <img src="assets/ciudad.jpg" alt="" width="1200px" />
+      </div>
+      <div id="ciudad2">
+        <img src="assets/ciudad.jpg" alt="" width="1200px" />
+      </div>
+      <div id="carro">
+        <img src="assets/autoM.gif" alt="" />
+      </div>
+    </div>
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script
+      src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
+      integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+      integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
+      integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
+      crossorigin="anonymous"
+    ></script>
+    <script>
+      var ciudad1;
+      var ciudad2;
+      window.onload = function() {
+        ciudad1 = document.getElementById("ciudad1");
+        ciudad2 = document.getElementById("ciudad2");
+        var moverBg = setInterval(mover, 50);
+        setInterval(repetir, 6000);
+      };
+      var movimiento = 0;
+      function mover() {
+        movimiento -= 10;
+        movimiento2 = movimiento + 1200;
+        operacion = movimiento + "px";
+        operacion2 = movimiento2 + "px";
+        ciudad1.style.right = operacion;
+        ciudad2.style.right = operacion2;
+      }
+      function repetir() {
+        ciudad1.style.right = "0px";
+        ciudad1.style.repetir = "1200px";
+        movimiento = 0;
+      }
+    </script>
+  </body>
+</html>
