@@ -15,12 +15,43 @@
       integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh"
       crossorigin="anonymous"
     />
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@9"></script>
 
     <title>Hello, world!</title>
   </head>
   <body>
-    <h1>Hello, world!</h1>
+    <h1>JavaScript</h1>
 
+    <form>
+      <div class="row">
+        <div class="col">
+          <input
+            id="name"
+            type="text"
+            class="form-control"
+            placeholder="First name"
+          />
+        </div>
+        <div class="col">
+          <input
+            type="text"
+            id="lastname"
+            class="form-control"
+            placeholder="Last name"
+          />
+        </div>
+        <div class="col">
+          <input
+            type="button"
+            onclick="getName()"
+            class="from-control btn btn-black"
+            placeholder="Last Name"
+            value="Enviar"
+          />
+        </div>
+      </div>
+    </form>
+    <div id="loading" style="height: 300px; width: 200px;"></div>
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
     <script
@@ -38,5 +69,31 @@
       integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
       crossorigin="anonymous"
     ></script>
+
+    <script>
+      var numero = 10;
+      const apellido = "Private";
+      if (numero == 10) {
+        let bloque = "Numero 10";
+        var numero2 = "Numero 100";
+        //alert(bloque);
+      } else {
+        var numero2 = 10;
+      }
+      //alert(numero2);
+      function getName() {
+        var name = document.getElementById("name").value;
+        console.log(name);
+        var lastname = document.getElementById("lastname").value;
+        lastname = $("#lastname").val();
+        console.log(lastname);
+        var fullname = name + " " + lastname;
+        $("#loading").html('<img src="assets/animation.svg" >');
+        setTimeout(function() {
+          $("#loading").html("");
+          Swal.fire("Good job!", fullname, "success");
+        }, 500);
+      }
+    </script>
   </body>
 </html>
